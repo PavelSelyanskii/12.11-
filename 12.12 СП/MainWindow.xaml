@@ -1,0 +1,39 @@
+﻿<Window x:Class="_12._12_СП.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Файловый менеджер" Height="600" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Работа с текстовыми файлами">
+                <StackPanel>
+                    <Button Name="btnOpenFile" Content="Открыть файл" Click="btnOpenFile_Click"/>
+                    <Button Name="btnCreateFile" Content="Создать файл" Click="btnCreateFile_Click"/>
+                    <Button Name="btnDeleteFile" Content="Удалить файл" Click="btnDeleteFile_Click"/>
+                    <Button Name="btnSaveFile" Content="Сохранить файл" Click="btnSaveFile_Click"/>
+                    <TextBox Name="txtFileContent" AcceptsReturn="True" Height="300" TextWrapping="Wrap"/>
+
+                    <Grid>
+                        <TextBox Name="txtSearch" Width="200" Margin="0,10,0,0" Text="Поиск..." GotFocus="txtSearch_GotFocus" LostFocus="txtSearch_LostFocus"/>
+                    </Grid>
+
+                    <Button Name="btnSearch" Content="Поиск" Click="btnSearch_Click"/>
+                    <TextBox Name="txtFilter" Width="200" Margin="0,10,0,0" Text="Фильтр..." GotFocus="txtFilter_GotFocus" LostFocus="txtFilter_LostFocus"/>
+                    <Button Name="btnFilter" Content="Фильтровать" Click="btnFilter_Click"/>
+                    <Button Name="btnSort" Content="Сортировать" Click="btnSort_Click"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Системные логи">
+                <StackPanel>
+                    <ListBox Name="listBoxLogs" Height="300"/>
+                    <Button Name="btnRefreshLogs" Content="Обновить логи" Click="btnRefreshLogs_Click"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Статистика">
+                <StackPanel>
+                    <TextBlock Name="txtStatistics" Text="Статистика:"/>
+                    <Button Name="btnExport" Content="Экспортировать" Click="btnExport_Click"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
